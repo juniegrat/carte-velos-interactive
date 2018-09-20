@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" href="./dist/img/home/favicon.png" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="./dist/css/main.css">
+    <title>Carte vélos libre service Lyon</title>
+
+</head>
+
+
+<body>
+    <nav class="navbar navbar-light bg-light d-flex justify-content-around">
+        <a class="navbar-brand " href="#">
+            <img src="./dist/img/home/logo-velov.png" class="d-inline-block align-top" alt="">
+        </a>
+        <ul class="navbar-nav">
+            <li class="nav-item active">
+                <a class="nav-link font-weight-bold" href="#map">CARTE
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <div id="mapContainer" class="container">
+        <div id="carousel">
+
+            <div id="home" class="card m-3 text-white text-center">
+                <img class="card-img carousel-img" src="./dist/img/home/home.jpg" alt="Card image">
+                <div class="card-img-overlay mt-5 home-overlay">
+                    <h2 class="card-title font-weight-bold mt-5 mb-3 home-title">Roulez libre comme l'air !</h2>
+                    <p class="card-text home-text">24h/24 et 7j/7, Profitez de Vélo'v dans votre ville.</p>
+                    <a href="#map" class="btn btn-danger button">Louer un vélo</a>
+                </div>
+            </div>
+
+            <div id="how" class="card m-3 text-dark">
+                <img class="card-img carousel-img how-img" src="./dist/img/home/home-trail-bg.jpg" alt="Card image">
+                <div class="card-img-overlay">
+                    <div class=" text-center card-how mt-4">
+                        <h3 class="card-title font-weight-bold mb-4 mt-5">Comment ca marche ?</h3>
+                        <hr>
+                        <div class="d-flex pt-5 font-weight-bold text-uppercase svg-container">
+                            <div class="card-svg">
+                                <img src="./dist/img/home/pin-station-available.svg" alt="">
+                                <a class="" href="">Vélo'v disponible</a>
+                            </div>
+                            <div class="card-svg">
+                                <img src="./dist/img/home/pin-station.svg" alt="">
+                                <a class="" href="">Plus de vélo'v</a>
+                            </div>
+                            <div class="card-svg">
+                                <img src="./dist/img/home/pin-station-close.svg" alt="">
+                                <a class="" href="">Station en travaux</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="rules" class="card m-3 bg-light">
+                <img class="card-img carousel-img" src="./dist/img/home/home-offers-bg.png" alt="Card image">
+                <div class="card-img-overlay d-flex flex-column align-items-center">
+                    <h3 class="card-title font-weight-bold rule-title">Carte intéractive</h3>
+                    <p class="card-text text-center w-50 text-secondary pb-3 rules-text">Vélo'v, un service libre comme moi. Une commande en temps réel de mon vélo et des déplacements en toute
+                        liberté !</p>
+                    <div class="d-flex offer-card text-dark">
+                        <div class="card ml-3">
+                            <div class="card-body ml-0">
+                                <h5 class="card-title">Carte des vélos</h5>
+                                <p class="card-text">Retrouvez les informations de chaque station (ouverte, en travaux, combien de vélo'v et de
+                                    places sont disponibles, etc.)</p>
+                                <a href="#map" class="btn btn-danger button">Aller à la carte</a>
+                            </div>
+                        </div>
+                        <div class="card ml-3">
+                            <div class="card-body ml-0">
+                                <h5 class="card-title">Réservation</h5>
+                                <p class="card-text">Vous pouvez réserver un vélo'v disponible en signant. Une fois votre signature validée, un
+                                    vélo'v sera réservé à votre nom.</p>
+                                <a href="#map" class="btn btn-danger button">Aller à la carte</a>
+                            </div>
+                        </div>
+                        <div class="card ml-3">
+                            <div class="card-body ml-0">
+                                <h5 class="card-title">Expiration</h5>
+                                <p class="card-text">Si vous n'avez pas récuperé votre vélo'v au bout de 20 minutes, il sera automatiquement remis
+                                    à disposition.</p>
+                                <a href="#map" class="btn btn-danger button">Aller à la carte</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="d-flex map-container">
+            <div id="searchBox">
+                <span id="searchInput" class="search-box">
+                    <input id="pac-input" class="controls" type="text" placeholder="Recherche">
+                </span>
+                <div id="searchWindow" class="search-window"></div>
+            </div>
+            <div id="map" class="map">
+            </div>
+            <div id="content-window"></div>
+        </div>
+    </div>
+    <div id="tdisplay" class="text-center"></div>
+    <footer id="footer" class="text-white ">
+        <div class="bg-dark">
+            <div class="d-flex justify-content-around align-items-center footer-container">
+                <img src="./dist/img/home/logo-velov-alt.png" alt="">
+                <div class="mt-3">
+                    <h4>Pages :</h4>
+                    <hr>
+                    <ul class="list-unstyled">
+                        <li>
+                            <a href="#home"> Vélo'v</a>
+                        </li>
+                        <li>
+                            <a href="#how"> Comment ca marche ?</a>
+                        </li>
+                        <li>
+                            <a href="#rules"> Règles</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="mt-3">
+                    <h4>Retrouvez nous sur :</h4>
+                    <hr>
+                    <ul class="list-unstyled">
+                        <li>
+                            <a href="">
+                                <i class="fab fa-twitter text-info"></i> Twitter</a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <i class="fab fa-instagram text-danger"></i> Instagram</a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <i class="fab fa-facebook-f text-primary"></i> Facebook</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="text-center ml-5 pl-5 privacy-mention">
+                <a href=""> Mentions légales</a> |
+                <a href=""> Politique de protection des données personnelles</a>
+            </div>
+        </div>
+    </footer>
+    <script src="./dist/js/markerclusterer.js"></script>
+    <script type='text/javascript' src="./dist/js/carousel.js"></script>
+    <script type='text/javascript' src="./dist/js/map.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCuIwjNJe1-t0TFR66xcJHQjDB7xGfNFLQ&callback=initMap"></script>
+    <script src="https://api.jcdecaux.com/vls/v1/stations?contract=Lyon&apiKey=2875f9262fc0a640a983ed257aba380c5ce7a202"></script>
+
+</body>
+
+</html>
